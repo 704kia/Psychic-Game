@@ -17,15 +17,16 @@ var pastChoices = [];
 
 document.onkeyup = function(event) {
 
+var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
 var userguess = event.key;
 
 //set computerGuess = computerChoices
 
 var computerGuess = computerChoices [Math.floor(math.random()* computerChoices.length)];
 
-var 
-
 //function countGuess () {}
+if (options.indexOf(userGuess) > -1 {
 
 if ( userguess == computerChoices) {
     wins++;
@@ -36,7 +37,7 @@ if ( userguess == computerChoices) {
 if ( userguess != computerChoices) {
     wins--;
     numGuesses--;
-    pastChoices= [];
+    pastChoices.push(userGuess)= [];
 }
 
 else if (pastChoices === 0) {
@@ -44,3 +45,15 @@ else if (pastChoices === 0) {
    
 }
 }  
+// what appears on screen
+var display = 
+    "<h1> Psychic Game</h1>" +
+    "<p> Guess what letter I'm thinking of</p>" +
+    "<p>Wins: "+ wins+ "</p>" +
+    "<p>Losses: " + losses+ "</p>" +
+    "<p>Guesses Left: " + numGuesses+"</p>" +
+    "<p>Past Guesses: " + pastChoices+"</p>" 
+
+    
+//make everything appear
+document.querySelector("#game").innerHTML = display
